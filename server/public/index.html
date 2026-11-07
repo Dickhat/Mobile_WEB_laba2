@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Лабораторная №2 — Список задач</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+<main class="container">
+ <header><div><span class="eyebrow">Aurora OS · Лабораторная работа №2</span><h1>Список задач</h1><p>REST API /api/v1 · HTTPS · JSON · JWT</p></div><a href="/docs" target="_blank" rel="noopener">Документация API ↗</a></header>
+ <section class="card auth">
+  <h2>Авторизация</h2>
+  <form id="loginForm" class="row-form">
+    <label>Логин<input id="login" value="student" autocomplete="username" required></label>
+    <label>Пароль<input id="password" type="password" value="student123" autocomplete="current-password" required></label>
+    <button type="submit">Войти</button><button type="button" id="logout" class="secondary">Выйти</button>
+  </form>
+  <p id="authStatus" class="hint" role="status">Войдите, чтобы работать с задачами.</p>
+ </section>
+ <section class="card">
+  <div class="section-top"><h2 id="editorTitle">Новая задача</h2><button type="button" class="secondary" id="cancelEdit" hidden>Отменить правку</button></div>
+  <form id="taskForm">
+    <label>Заголовок<input id="title" maxlength="120" required placeholder="Например: Сделать лабораторную"></label>
+    <label>Описание<textarea id="description" maxlength="1000" rows="3" placeholder="Что нужно сделать?"></textarea></label>
+    <div class="row-form">
+      <label>Статус<select id="status"><option value="new">Новая</option><option value="in_progress">В работе</option><option value="done">Готово</option></select></label>
+      <label>Срок<input type="date" id="dueDate"></label>
+    </div>
+    <button type="submit" id="save">Создать задачу</button>
+  </form>
+ </section>
+ <section class="card">
+  <div class="section-top"><h2>Мои задачи</h2><button type="button" id="reload" class="secondary">Обновить</button></div>
+  <p class="hint" id="cache">ETag: ещё не получен</p>
+  <div id="tasks" class="task-list"><p>Войдите для загрузки задач.</p></div>
+ </section>
+ <output id="message" role="status" aria-live="polite"></output>
+ <footer>ПК и телефон открывают один HTTPS-адрес. Клиент посылает заголовки Accept, Content-Type, Authorization, User-Agent; браузер задаёт Host автоматически.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Tasks Lab 2
+Name[ru]=Список задач
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.mai.lab2tasks
+Exec=/usr/bin/ru.mai.lab2tasks
+
+[X-Application]
+Permissions=Internet
+OrganizationName=ru.mai
+ApplicationName=lab2tasks

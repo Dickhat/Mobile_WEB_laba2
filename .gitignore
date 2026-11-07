@@ -1,0 +1,8 @@
+**/__pycache__/
+**/.pytest_cache/
+**/.venv/
+server/certs/*
+server/data/
+**/*.user
+**/build/
+.vscode

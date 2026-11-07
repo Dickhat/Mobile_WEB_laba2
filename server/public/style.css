@@ -1,0 +1,286 @@
+:root {
+  --bg: #f2f5fa;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --border: #e6ebf2;
+  --border-strong: #cbd5e1;
+  --text: #17223b;
+  --muted: #64748b;
+  --muted-strong: #485875;
+  --accent: #2759c8;
+  --accent-soft: #eaf0fb;
+  --accent-text: #204f9f;
+  --danger-bg: #fce8e8;
+  --danger-text: #a62828;
+  --success: #2b5994;
+  --shadow: rgba(20, 41, 73, 0.06);
+
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 26px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 2px 22px;
+}
+
+header h1 {
+  margin: 4px 0;
+  font-size: clamp(30px, 5vw, 45px);
+  letter-spacing: -0.04em;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+header a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #5677a5;
+  text-transform: uppercase;
+}
+
+.card {
+  background: var(--surface);
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px var(--shadow);
+  margin-bottom: 17px;
+}
+
+h2 {
+  font-size: 19px;
+  margin: 0 0 18px;
+}
+
+.row-form {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.row-form label {
+  flex: 1;
+  min-width: 150px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--muted-strong);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: var(--surface);
+  color: #1c2c44;
+  outline-color: #285bcc;
+}
+
+button {
+  min-height: 45px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+button.danger {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.section-top h2 {
+  margin: 0;
+}
+
+.task-list {
+  display: grid;
+  gap: 12px;
+}
+
+.task {
+  padding: 17px;
+  background: var(--surface-alt);
+  border: 1px solid #e0e7f0;
+  border-radius: 12px;
+}
+
+.task h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.task p {
+  margin: 6px 0;
+  color: #52617a;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.task .meta {
+  margin: 9px 0;
+  font-size: 13px;
+  color: #697890;
+}
+
+.task .actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.task button {
+  min-height: 36px;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+#message {
+  display: block;
+  min-height: 24px;
+  padding: 0 2px 12px;
+  color: var(--success);
+}
+
+footer {
+  padding-bottom: 16px;
+  color: #788398;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding: 12px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card {
+    padding: 17px;
+    border-radius: 13px;
+  }
+
+  .row-form {
+    display: block;
+  }
+
+  .row-form label {
+    min-width: 0;
+  }
+
+  .row-form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .section-top button {
+    width: auto;
+  }
+
+  .task .actions button {
+    width: auto;
+    flex: 1;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 8px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .task .actions {
+    flex-direction: column;
+  }
+
+  .task .actions button {
+    width: 100%;
+  }
+}
+
